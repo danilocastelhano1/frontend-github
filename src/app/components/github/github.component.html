@@ -1,0 +1,90 @@
+<div class="toolbar">
+    <div class="col-12 labelTop">
+        <label>Cadastro de Devs</label>
+    </div>
+    <div class="row">
+        <div class="col-12" style="display: flex;">
+            <div class="col-4 cadastro">
+                <button type="button" class="btn btn-light btn-lg btn-block mt-2 btnGitHub mb-3" *ngIf="exibirBotaoGitHub">
+                    <i class="fa fa-github"></i>
+                    <a href="https://github.com/login/oauth/authorize?client_id=Iv1.81c2b39a91238234">Cadastrar com Github</a>
+                </button>
+
+                <form  [formGroup]="gitHubForm">
+                    <div class="form-group">
+                        <label for="nome">Usuário Github</label>
+                        <input type="text" class="form-control" name="user" id="user" formControlName="user">
+                    </div>
+                    
+                    <hr/>
+
+                    <div class="form-group">
+                        <label for="nome">Avatar URL</label>
+                        <input type="text" class="form-control" name="avatar_url" id="avatar_url" formControlName="avatar_url">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" formControlName="nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" formControlName="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Cidade</label>
+                        <input type="text" class="form-control" name="cidade" id="cidade" formControlName="cidade">
+                    </div>
+
+                    <hr/>
+
+                    <div class="text-center">
+                        <label class="labelProfissional">Profissional</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Formação</label>
+                        <input type="text" class="form-control" name="formacao" id="formacao" formControlName="formacao">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Tecnologias</label>
+                        <textarea id="tecnologias" class="form-control" name="tecnologias" rows="4" cols="50" formControlName="tecnologias"></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-success btn-lg btn-block mb-3" (click)="cadastrarGitHub()" [disabled]="!gitHubForm.valid">Cadastrar</button>
+                </form>
+            </div>
+            <div style="margin-top: 20px;" >
+                <div class="col-4 boxes" *ngFor="let user of users">
+                    <div class="text-right">
+                        <img src="{{user.avatar_url}}" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="texto">
+                        <div class="text-left">
+                            {{user.nome}}                      
+                        </div>
+                        <div class="text-left">
+                            {{user.cidade}}                      
+                        </div>
+                        <div class="text-left">
+                            {{user.tecnologias}}                        
+                        </div>                        
+                    </div>
+                    <div class="text-left">
+                        <a [href]="getLink(user.user)">Acessar Github</a>
+                    </div>
+
+                    <div class="text-right">
+                        <i class="fa fa-edit fa-1x mr-2" style="color: aqua; cursor: grab;" (click)="editCadastro(user)"></i>
+                        <i class="fa fa-trash fa-1x" style="color: maroon; cursor: grab;" (click)="deleteCadastro(user._id)"></i>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

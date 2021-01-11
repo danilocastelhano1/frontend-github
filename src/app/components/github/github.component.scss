@@ -1,0 +1,52 @@
+.toolbar{
+    height: 90px;
+    width: 100%;
+    background-color:darkslateblue;
+}
+
+.labelTop{
+    padding-top: 25px;
+    padding-left: 350px;
+    font-weight: 700;
+    font-size: x-large;
+    color:white;
+}
+
+.cadastro{
+    border: 1px solid;
+    height: auto;
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 150px;
+}
+
+.btnGitHub{
+    border: 1px solid;
+}
+
+.labelProfissional{
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.boxes{
+    width: 800px;
+    height: 200px;
+    background-color: navy;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 1%;    
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.texto{
+    color: white;
+    font-weight: 700;
+}
